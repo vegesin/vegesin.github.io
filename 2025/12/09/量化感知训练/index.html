@@ -172,7 +172,7 @@
         <div class="post-toc">
             <a href="/2025/12/09/%E9%87%8F%E5%8C%96%E6%84%9F%E7%9F%A5%E8%AE%AD%E7%BB%83/" class="toc-header">Table of Contents</a>
             <div class="toc-content">
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%84%9F%E7%9F%A5%E8%AE%AD%E7%BB%83"><span class="toc-number">1.</span> <span class="toc-text">量化感知训练</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">量化基础原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E5%90%8E%E9%87%8F%E5%8C%96"><span class="toc-number">1.2.1.</span> <span class="toc-text">训练后量化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%84%9F%E7%9F%A5%E8%AE%AD%E7%BB%83-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">量化感知训练</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QAT-Torch%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.</span> <span class="toc-text">QAT Torch实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">量化模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E5%8F%82%E6%95%B0%E6%8F%90%E5%8F%96%E6%8E%A8%E7%90%86"><span class="toc-number">1.3.2.</span> <span class="toc-text">量化参数提取推理</span></a></li></ol></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E5%9F%BA%E7%A1%80%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">量化基础原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E5%90%8E%E9%87%8F%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">训练后量化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%84%9F%E7%9F%A5%E8%AE%AD%E7%BB%83"><span class="toc-number">2.2.</span> <span class="toc-text">量化感知训练</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QAT-Torch%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">QAT Torch实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">量化模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E5%8F%82%E6%95%B0%E6%8F%90%E5%8F%96%E6%8E%A8%E7%90%86"><span class="toc-number">3.2.</span> <span class="toc-text">量化参数提取推理</span></a></li></ol></li></ol>
             </div>
         </div>
     
@@ -307,7 +307,7 @@
     
     
     <div class="post-content typo">
-        <h1 id="量化感知训练"><a href="#量化感知训练" class="headerlink" title="量化感知训练"></a>量化感知训练</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>模型量化通过将模型权重或激活值从高精度的浮点数表示转换为低精度的整数表示，来减小模型大小、降低内存占用，同时在推理时将浮点的矩阵运算转换为整型运算，以此进行加速。</p>
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>模型量化通过将模型权重或激活值从高精度的浮点数表示转换为低精度的整数表示，来减小模型大小、降低内存占用，同时在推理时将浮点的矩阵运算转换为整型运算，以此进行加速。</p>
 <p>本文重点介绍使用torch框架进行量化感知训练，同时提取量化参数进行量化推理。</p>
 <h2 id="量化基础原理"><a href="#量化基础原理" class="headerlink" title="量化基础原理"></a>量化基础原理</h2><p>模型量化的核心思想是将连续的浮点数值映射到有限的、离散的整数值集合。量化的核心是建立 FP32 与 INT8 数值之间的一一对应关系。这种映射关系通常采用仿射变换实现，其中$q$表示整形，$r$表示浮点，$S$为缩放因子(Scale)，$Z$表示零点(Zero-Point):</p>
 <p>$$<br>\begin{align*}<br>q &amp;&#x3D; \textbf{round}(S \times r) + Z \\<br>r &amp;&#x3D; S \times (q - Z)<br>\end{align*}<br>$$</p>
@@ -316,7 +316,7 @@
 <p>根据上式，使用量化之后的整形表示浮点运算的关键是得到缩放因子$S$和零点$Z$这两个量化参数。</p>
 <p>在实际的模型量化过程中，主流的量化方案包括训练后量化和量化感知训练。</p>
 <h3 id="训练后量化"><a href="#训练后量化" class="headerlink" title="训练后量化"></a>训练后量化</h3><p>训练后量化(Post-Training Quantization，PTQ）是一种简单快捷的量化方法。它直接对一个已经训练好的浮点模型进行转换，无需重新训练。PTQ通常只需要少量校准数据集（calibration data）来确定权重和激活值的量化参数$S$和$Z$。</p>
-<h3 id="量化感知训练-1"><a href="#量化感知训练-1" class="headerlink" title="量化感知训练"></a>量化感知训练</h3><p>量化感知训练 (Quantization-Aware Training, QAT) 通过在模型中插入伪量化节点，在训练过程中模拟量化操作带来的误差。在反向传播更新权重时，模型会将量化误差最为损失主动优化。</p>
+<h3 id="量化感知训练"><a href="#量化感知训练" class="headerlink" title="量化感知训练"></a>量化感知训练</h3><p>量化感知训练 (Quantization-Aware Training, QAT) 通过在模型中插入伪量化节点，在训练过程中模拟量化操作带来的误差。在反向传播更新权重时，模型会将量化误差最为损失主动优化。</p>
 <p>对一个模型进行QAT时，可以从零开始重新训练，也可以使用一个预训练的模型，通过在校准集上微调，学习出量化参数。</p>
 <p>下面本文将重点介绍使用Torch进行QAT。</p>
 <h2 id="QAT-Torch实现"><a href="#QAT-Torch实现" class="headerlink" title="QAT Torch实现"></a>QAT Torch实现</h2><h3 id="量化模型"><a href="#量化模型" class="headerlink" title="量化模型"></a>量化模型</h3><p>将一个浮点模型转换为一个量化模型，主要包含以下步骤：</p>
