@@ -312,7 +312,7 @@
 <h2 id="2-量化基础原理"><a href="#2-量化基础原理" class="headerlink" title="2.量化基础原理"></a>2.量化基础原理</h2><p>模型量化的核心思想是将连续的浮点数值映射到有限的、离散的整数值集合。量化的核心是建立 FP32 与 INT8 数值之间的一一对应关系。这种映射关系通常采用仿射变换实现，其中$q$表示整形，$r$表示浮点，$S$为缩放因子(Scale)，$Z$表示零点(Zero-Point):</p>
 <p>$$<br>\begin{align*}<br>q &amp;&#x3D; \textbf{round}(S \times r) + Z \<br>r &amp;&#x3D; S \times (q - Z)<br>\end{align*}<br>$$</p>
 <p>以卷积运算为例子，输入$X$，卷积权重$W$，输出$Y$：</p>
-<p>$$<br>\begin{aligned}<br>Y_r &amp;&#x3D; X_r * W_r \<br>Y_S \times (Y_q - Y_z) &amp;&#x3D; [X_S \times (X_q - X_z)] * [W_S \times (W_q - W_z)] \<br>Y_q &amp;&#x3D; \frac{X_S W_S}{Y_S}[(X_q - X_z) * (W_q - W_z)] + Y_Z<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{align*}<br>Y_r &amp;&#x3D; X_r * W_r \<br>Y_S \times (Y_q - Y_z) &amp;&#x3D; [X_S \times (X_q - X_z)] * [W_S \times (W_q - W_z)] \<br>Y_q &amp;&#x3D; \frac{X_S W_S}{Y_S}[(X_q - X_z) * (W_q - W_z)] + Y_Z<br>\end{align*}<br>$$</p>
 <p>根据上式，使用量化之后的整形表示浮点运算的关键是得到缩放因子$S$和零点$Z$这两个量化参数。</p>
 <p>在实际的模型量化过程中，主流的量化方案包括训练后量化和量化感知训练。</p>
 <h3 id="训练后量化"><a href="#训练后量化" class="headerlink" title="训练后量化"></a>训练后量化</h3><p>训练后量化(Post-Training Quantization，PTQ）是一种简单快捷的量化方法。它直接对一个已经训练好的浮点模型进行转换，无需重新训练。PTQ通常只需要少量校准数据集（calibration data）来确定权重和激活值的量化参数$S$和$Z$。</p>
